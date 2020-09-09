@@ -1,6 +1,6 @@
-var fs = require('fs');
+const fs = require('fs');
+const path = require('path');
+const csv = require('fast-csv');
 
-fs.appendFile('mynewfile1.txt', ' This is my text.', function (err) {
-  if (err) throw err;
-  console.log('Updated!');
-});
+const rows = fs.createReadStream(path.resolve(__dirname, 'assets', 'Test.csv'))
+    
